@@ -1,17 +1,18 @@
 import Link from 'next/link'
+import { Topics } from '../Topics.json'
 
 const linkStyle = {
   marginRight: 15
 }
 
+//map from common location
 const Header = () => (
     <div>
-        <Link href="/">
-          <a style={linkStyle}>Home</a>
-        </Link>
-        <Link href="/about">
-          <a style={linkStyle}>About</a>
-        </Link>
+      {Topics.map((post) => (
+        <Link href={`#${post.id}`}>
+          <a style={linkStyle}>{post.title}</a>
+        </Link>         
+      ))}
     </div>
 )
 
