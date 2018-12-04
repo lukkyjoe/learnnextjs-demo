@@ -28,7 +28,7 @@ export default () => (
     <ul>
       {Topics.map((post) => (
         <li key={post.id}>
-          <Link id={post.id} as={`/p/${post.id}`} href={`/post?title=${post.title}`}>
+          <Link id={post.id}>
             <a>{post.title}</a>
           </Link>
         </li>
